@@ -1,6 +1,5 @@
 import { useState } from "react"
-const Form = ({onCalculate}) => {
-    const [currentSavings, setCurrentSavings] = useState(10000)
+const Form = ({onCalculate,currentSavings,setCurrentSavings}) => {
     const [yearlyContribution, setYearlyContribution] = useState(1000)
     const [expectedReturn, setExpectedReturn] = useState(10)
     const [duration, setDuration] = useState(10)

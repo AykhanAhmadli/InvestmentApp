@@ -5,7 +5,7 @@ import { useState } from "react";
 
 
 const App = () => { 
-
+  const [currentSavings, setCurrentSavings] = useState(10000)
   const [results, setResults] = useState(null)
   const calculateHandler = (currentSavings,yearlyContribution,expectedReturn,duration) => {
     const yearlyData = []; 
@@ -27,12 +27,11 @@ const App = () => {
   return (
     <div>
       <Header />
-
-      <Form onCalculate={calculateHandler}/>
+      <Form onCalculate={calculateHandler} currentSavings={currentSavings} setCurrentSavings={setCurrentSavings}/>
 
       {/* Todo: Show below table conditionally (only once result data is available) */}
       {/* Show fallback text if no data is available */}
-      {results &&  <Results data={results}/> }
+      {results &&  <Results data={results} initialInvestment={currentSavings} /> }
      
     </div>
   );
