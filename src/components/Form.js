@@ -5,7 +5,11 @@ const Form = ({onCalculate,currentSavings,setCurrentSavings}) => {
     const [duration, setDuration] = useState(10)
 
     const reset = () => {
-        console.log('reset')
+        setCurrentSavings(10000)
+        setYearlyContribution(1000)
+        setExpectedReturn(10)
+        setDuration(10)
+        
     }
 
     const submit = (event) => {

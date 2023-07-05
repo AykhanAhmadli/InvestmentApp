@@ -31,7 +31,7 @@ const App = () => {
 
       {/* Todo: Show below table conditionally (only once result data is available) */}
       {/* Show fallback text if no data is available */}
-      {results &&  <Results data={results} initialInvestment={currentSavings} /> }
+      {results? <Results data={results} initialInvestment={currentSavings} /> : <p style={{textAlign:'center'}}>No investment calculated yet</p> }
      
     </div>
   );
