@@ -6,13 +6,12 @@ import { useState } from "react";
 
 const App = () => { 
 
-  const [Results, setResults] = useState(null)
+  const [results, setResults] = useState(null)
   const calculateHandler = (currentSavings,yearlyContribution,expectedReturn,duration) => {
-
     const yearlyData = []; 
 
     for (let i = 0; i < duration; i++) {
-      const yearlyInterest = currentSavings * expectedReturn/100;
+      const yearlyInterest = currentSavings * (expectedReturn/100);
       currentSavings += yearlyInterest + yearlyContribution;
       yearlyData.push({
         year: i + 1,
@@ -21,7 +20,6 @@ const App = () => {
         yearlyContribution: yearlyContribution,
       });
     }
-
     setResults(yearlyData)
 
   };
@@ -34,8 +32,8 @@ const App = () => {
 
       {/* Todo: Show below table conditionally (only once result data is available) */}
       {/* Show fallback text if no data is available */}
-
-      <Results />
+      {results &&  <Results data={results}/> }
+     
     </div>
   );
 }

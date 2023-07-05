@@ -1,4 +1,4 @@
-const Results = () => {
+const Results = ({data}) => {
     return (
         <table className="result">
             <thead>
@@ -11,13 +11,15 @@ const Results = () => {
                 </tr>
             </thead>
             <tbody>
+                {data.map(data=>
                 <tr>
-                    <td>YEAR NUMBER</td>
-                    <td>TOTAL SAVINGS END OF YEAR</td>
-                    <td>INTEREST GAINED IN YEAR</td>
+                    <td>{data.year}</td>
+                    <td>{data.savingsEndOfYear}</td>
+                    <td>{data.yearlyInterest}</td>
                     <td>TOTAL INTEREST GAINED</td>
                     <td>TOTAL INVESTED CAPITAL</td>
                 </tr>
+                )}
             </tbody>
         </table>
     );

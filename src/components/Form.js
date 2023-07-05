@@ -1,8 +1,8 @@
 import { useState } from "react"
 const Form = ({onCalculate}) => {
-    const [currentSavings, setCurrentSavings] = useState("10000")
-    const [yearlyContribution, setYearlyContribution] = useState("1000")
-    const [expectedReturn, setExpectedReturn] = useState("10")
+    const [currentSavings, setCurrentSavings] = useState(10000)
+    const [yearlyContribution, setYearlyContribution] = useState(1000)
+    const [expectedReturn, setExpectedReturn] = useState(10)
     const [duration, setDuration] = useState(10)
 
     const reset = () => {
