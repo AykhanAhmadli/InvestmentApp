@@ -1,11 +1,26 @@
 const Form = () => {
+    const [currentSavings, setCurrentSavings] = useState()
+    const [yearlyContribution, setYearlyContribution] = useState()
+    const [expectedReturn, setExpectedReturn] = useState()
+    const [duration, setDuration] = useState()
 
     const reset = () => {
         console.log('reset')
     }
 
     const inputHandler = (input, value) => {
-        console.log(input, value)
+        if (input === "current-savings") {
+            setCurrentSavings(value)
+        }
+        else if (input === "yearly-contribution") {
+            setYearlyContribution(value)
+        }
+        else if (input === "expected-return") {
+            setExpectedReturn(value)
+        }
+        else if (input === "duration") {
+            setDuration(value)
+        }
     }
 
 
